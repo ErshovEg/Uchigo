@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { SearchTeacherForm } from '@/components/SearchTeacherForm';
 import { HowItWorks } from '@/components/HowItWorks';
 import { Footer } from '@/components/Footer';
+import Link from 'next/link';
 
 export default function Home() {
   const [error, setError] = useState<string | null>(null);
@@ -21,19 +22,29 @@ export default function Home() {
             Платформа позволяет преподавателям бесплатно создать свою страницу с учебными материалами. 
             Ученик получает доступ по коду, который даёт преподаватель.
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg shadow-lg"
-          >
-            Стать преподавателем
-          </motion.button>
+          <div className="flex gap-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg shadow-lg"
+            >
+              <Link href="/register">Стать преподавателем</Link>
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg"
+            >
+              <Link href="/login">Войти</Link>
+            </motion.button>
+          </div>
         </div>
       </section>
 
       {/* Search Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8">Найти преподавателя</h2>
           <SearchTeacherForm onError={setError} />
           {error && (
             <p className="text-red-500 mt-4 text-center">{error}</p>
