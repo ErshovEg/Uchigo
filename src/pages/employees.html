@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список сотрудников - 66bit</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <button class="theme-toggle" aria-label="Переключить тему">
+        <svg class="theme-icon-light" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4C5.79086 4 4 5.79086 4 8C4 10.2091 5.79086 12 8 12Z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8 2V1M8 15V14M14 8H15M1 8H2M12.95 3.05L13.66 2.34M2.34 13.66L3.05 12.95M12.95 12.95L13.66 13.66M2.34 2.34L3.05 3.05" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="theme-icon-dark" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M13.5 8C13.5 11.0376 11.0376 13.5 8 13.5C4.96243 13.5 2.5 11.0376 2.5 8C2.5 4.96243 4.96243 2.5 8 2.5C8.3078 2.5 8.60923 2.52567 8.90192 2.57471C9.32867 2.64567 9.5 3.16692 9.21885 3.48462C8.40924 4.40152 7.9375 5.61714 7.9375 6.9375C7.9375 9.79411 10.2434 12.1 13.1 12.1C13.2658 12.1 13.4296 12.0937 13.5911 12.0814C13.9916 12.0502 14.1559 11.5511 13.8671 11.2622C13.6226 11.0177 13.5 10.6796 13.5 10.3125V8Z" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <span class="theme-text">Светлая тема</span>
+    </button>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="/logo.svg" alt="66bit">
+                <div class="contact-info">
+                    <span>+7 343 290 84 76</span>
+                    <span>info@66bit.ru</span>
+                </div>
+            </div>
+            <div class="breadcrumbs">
+                <a href="/">Главная</a>
+                <span>/</span>
+                <span>Список сотрудников</span>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="content-header">
+                <h1 class="title">Список сотрудников</h1>
+                <div class="filters-row">
+                    <div class="filter">
+                        <button class="filter-button">
+                            Должность
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </button>
+                        <div class="filter-dropdown" style="display: none;">
+                            <div class="filter-option">Frontend Developer</div>
+                            <div class="filter-option">Backend Developer</div>
+                            <div class="filter-option">Full Stack Developer</div>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <button class="filter-button">
+                            Пол
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </button>
+                        <div class="filter-dropdown" style="display: none;">
+                            <div class="filter-option">Мужской</div>
+                            <div class="filter-option">Женский</div>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <button class="filter-button">
+                            Стек технологий
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </button>
+                        <div class="filter-dropdown" style="display: none;">
+                            <div class="filter-option">React</div>
+                            <div class="filter-option">JavaScript</div>
+                            <div class="filter-option">TypeScript</div>
+                            <div class="filter-option">Node.js</div>
+                            <div class="filter-option">Python</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="text" class="search-input" placeholder="Поиск">
+
+            <div class="selected-filters">
+                <div class="filter-tag">
+                    Frontend Developer <span>×</span>
+                </div>
+                <div class="filter-tag">
+                    React <span>×</span>
+                </div>
+            </div>
+
+            <table class="employees-table">
+                <thead>
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Дата рождения</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Дмитриев Игорь Степанович</td>
+                        <td>Дизайнер</td>
+                        <td>+7 934 349-43-23</td>
+                        <td>23.09.2000</td>
+                    </tr>
+                    <tr>
+                        <td>Чечкин Дмитрий Андреевич</td>
+                        <td>Frontend-разработчик</td>
+                        <td>+7 934 349-43-23</td>
+                        <td>01.08.1999</td>
+                    </tr>
+                    <tr>
+                        <td>Рыбкин Эдуард Викторович</td>
+                        <td>Аналитик</td>
+                        <td>+7 934 349-43-23</td>
+                        <td>01.08.1999</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="loading-message" style="display: none;">Загрузка...</div>
+        </main>
+    </div>
+
+    <script>
+        // Функция для управления темой
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeText = document.querySelector('.theme-text');
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeText.textContent = newTheme === 'dark' ? 'Светлая тема' : 'Темная тема';
+        }
+
+        // Инициализация темы
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const html = document.documentElement;
+            const themeText = document.querySelector('.theme-text');
+            
+            html.setAttribute('data-theme', savedTheme);
+            themeText.textContent = savedTheme === 'dark' ? 'Светлая тема' : 'Темная тема';
+        }
+
+        // Добавляем обработчик клика на кнопку переключения темы
+        document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
+
+        // Инициализируем тему при загрузке страницы
+        document.addEventListener('DOMContentLoaded', initTheme);
+
+        // Обработка открытия/закрытия фильтров
+        document.querySelectorAll('.filter-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const dropdown = e.currentTarget.nextElementSibling;
+                const isVisible = dropdown.style.display === 'block';
+                
+                // Закрываем все открытые фильтры
+                document.querySelectorAll('.filter-dropdown').forEach(d => {
+                    d.style.display = 'none';
+                });
+
+                // Открываем текущий фильтр, если он был закрыт
+                if (!isVisible) {
+                    dropdown.style.display = 'block';
+                }
+            });
+        });
+
+        // Закрытие фильтров при клике вне них
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.filter')) {
+                document.querySelectorAll('.filter-dropdown').forEach(dropdown => {
+                    dropdown.style.display = 'none';
+                });
+            }
+        });
+
+        // Обработка выбора опции фильтра
+        document.querySelectorAll('.filter-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                const filterValue = e.target.textContent;
+                const dropdown = e.target.closest('.filter-dropdown');
+                dropdown.style.display = 'none';
+                
+                // Добавление выбранного фильтра
+                const selectedFilters = document.querySelector('.selected-filters');
+                const filterTag = document.createElement('div');
+                filterTag.className = 'filter-tag';
+                filterTag.innerHTML = `${filterValue} <span>×</span>`;
+                selectedFilters.appendChild(filterTag);
+            });
+        });
+
+        // Удаление фильтров
+        document.querySelector('.selected-filters').addEventListener('click', (e) => {
+            if (e.target.closest('.filter-tag')) {
+                e.target.closest('.filter-tag').remove();
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль сотрудника - 66bit</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <style>
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 32px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 24px;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: var(--hover-color);
+        }
+
+        .profile-card {
+            background-color: var(--bg-primary);
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .profile-header {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--text-tertiary);
+        }
+
+        .profile-info {
+            flex-grow: 1;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .profile-position {
+            font-size: 16px;
+            color: var(--text-secondary);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .info-label {
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        .info-value {
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        .technologies-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .technology-tag {
+            padding: 4px 12px;
+            background-color: var(--bg-secondary);
+            border-radius: 4px;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" aria-label="Переключить тему">
+        <svg class="theme-icon-light" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 11.5C9.933 11.5 11.5 9.933 11.5 8C11.5 6.067 9.933 4.5 8 4.5C6.067 4.5 4.5 6.067 4.5 8C4.5 9.933 6.067 11.5 8 11.5Z" stroke="white" stroke-width="1.5"/>
+            <path d="M8 2.5V1M8 15V13.5M14 8H15.5M0.5 8H2M12.3891 3.61091L13.4498 2.55025M2.55025 13.4498L3.61091 12.3891M12.3891 12.3891L13.4498 13.4498M2.55025 2.55025L3.61091 3.61091" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="theme-icon-dark" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.5 8C13.5 11.0376 11.0376 13.5 8 13.5C4.96243 13.5 2.5 11.0376 2.5 8C2.5 4.96243 4.96243 2.5 8 2.5C8.3078 2.5 8.60923 2.52567 8.90192 2.57471C9.32867 2.64567 9.5 3.16692 9.21885 3.48462C8.40924 4.40152 7.9375 5.61714 7.9375 6.9375C7.9375 9.79411 10.2434 12.1 13.1 12.1C13.2658 12.1 13.4296 12.0937 13.5911 12.0814C13.9916 12.0502 14.1559 11.5511 13.8671 11.2622C13.6226 11.0177 13.5 10.6796 13.5 10.3125V8Z" stroke="white" stroke-width="1.5"/>
+        </svg>
+        <span class="theme-text">Темная тема</span>
+    </button>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="/logo.svg" alt="66bit">
+                <div class="contact-info">
+                    <span>+7 343 290 84 76</span>
+                    <span>info@66bit.ru</span>
+                </div>
+            </div>
+            <div class="breadcrumbs">
+                <a href="/">Главная</a>
+                <span>/</span>
+                <a href="/employees.html">Список сотрудников</a>
+                <span>/</span>
+                <span>Дмитриев Игорь Степанович</span>
+            </div>
+        </header>
+
+        <main class="profile-container">
+            <a href="/employees.html" class="back-button">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M10 4L6 8L10 12" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                Назад к списку
+            </a>
+
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar">Д</div>
+                    <div class="profile-info">
+                        <h1 class="profile-name">Дмитриев Игорь Степанович</h1>
+                        <div class="profile-position">Дизайнер</div>
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Пол</div>
+                        <div class="info-value">Мужской</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Дата рождения</div>
+                        <div class="info-value">23.09.2000</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Телефон</div>
+                        <div class="info-value">+7 934 349-43-23</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Email</div>
+                        <div class="info-value">dmitriev@66bit.ru</div>
+                    </div>
+                    <div class="info-item" style="grid-column: 1 / -1;">
+                        <div class="info-label">Стек технологий</div>
+                        <div class="technologies-list">
+                            <div class="technology-tag">Figma</div>
+                            <div class="technology-tag">Adobe Photoshop</div>
+                            <div class="technology-tag">Adobe Illustrator</div>
+                            <div class="technology-tag">Sketch</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Функция для управления темой
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeText = document.querySelector('.theme-text');
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeText.textContent = currentTheme === 'dark' ? 'Темная тема' : 'Светлая тема';
+        }
+
+        // Инициализация темы
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const html = document.documentElement;
+            const themeText = document.querySelector('.theme-text');
+            
+            html.setAttribute('data-theme', savedTheme);
+            themeText.textContent = savedTheme === 'dark' ? 'Светлая тема' : 'Темная тема';
+        }
+
+        // Добавляем обработчик клика на кнопку переключения темы
+        document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
+
+        // Инициализируем тему при загрузке страницы
+        document.addEventListener('DOMContentLoaded', initTheme);
+    </script>
+</body>
+</html> 

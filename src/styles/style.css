@@ -1,0 +1,288 @@
+/* Добавляем переменные для цветов */
+:root {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --border-color: #E0E0E0;
+  --hover-color: #F5F5F5;
+  --filter-bg: #F0F0F0;
+  --filter-hover: #E0E0E0;
+  --transition-duration: 0.5s;
+  --theme-toggle-bg: #E0E0E0;
+  --theme-toggle-text: #FFFFFF;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1E1E1E;
+  --bg-secondary: #2D2D2D;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+  --text-tertiary: #999999;
+  --border-color: #404040;
+  --hover-color: #404040;
+  --filter-bg: #333333;
+  --filter-hover: #404040;
+  --theme-toggle-bg: #0066CC;
+  --theme-toggle-text: #FFFFFF;
+}
+
+/* Добавляем плавные переходы */
+* {
+  transition: background-color var(--transition-duration), color var(--transition-duration), border-color var(--transition-duration);
+}
+
+/* Стили для переключателя темы */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 32px;
+  border-radius: 32px;
+  background: var(--theme-toggle-bg);
+  border: none;
+  cursor: pointer;
+  padding: 6px 12px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--theme-toggle-text);
+  font-size: 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.theme-icon-light,
+.theme-icon-dark {
+  width: 16px;
+  height: 16px;
+  display: none;
+}
+
+.theme-icon-light {
+  display: block;
+}
+
+[data-theme="dark"] .theme-icon-light {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-dark {
+  display: block;
+}
+
+.theme-text {
+  display: block;
+  color: var(--theme-toggle-text);
+  white-space: nowrap;
+}
+
+.container {
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+  background-color: var(--bg-secondary);
+  min-height: 100vh;
+}
+
+.header {
+  background-color: var(--bg-primary);
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.logo img {
+  height: 32px;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-tertiary);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.breadcrumbs a {
+  color: var(--text-tertiary);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--text-primary);
+}
+
+.content {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.filters-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+  margin-bottom: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.search-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.selected-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filter-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background-color: var(--filter-bg);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.filter-tag:hover {
+  background-color: var(--filter-hover);
+}
+
+.filter-tag span {
+  color: var(--text-tertiary);
+}
+
+.employees-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-primary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.employees-table th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.employees-table td {
+  padding: 16px;
+  font-size: 14px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.employees-table tr {
+  cursor: pointer;
+}
+
+.employees-table tr:hover {
+  background-color: var(--hover-color);
+}
+
+.loading-message {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-primary);
+}
+
+.error-message {
+  color: #FF4444;
+  text-align: center;
+  padding: 32px;
+}
+
+/* Стили для фильтров */
+.filter {
+  position: relative;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-button:hover {
+  background-color: var(--hover-color);
+}
+
+.filter-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 0;
+  margin-top: 4px;
+  min-width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.filter-option {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.filter-option:hover {
+  background-color: var(--hover-color);
+} 
